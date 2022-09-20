@@ -54,10 +54,17 @@ Recomendación: Ver el estado de git después de cada paso.
 
 1. Abrir la consola de Rails
 1. Habilitar la gema Hirb con `Hirb.enable`
-1. Obtener el monstruo con ID 1
+1. Obtener el monstruo con ID 1 
+#Monster.find(1)
 1. Crear 3 monstruos
+#Monster.new, Monster.name =, Monster.id = ,Monster.description = 
 1. Obtener el último monstruo sin usar el ID
+#Monster.last
 1. Obtener los monstruos ordenados por nombre
+#Monster.order(:name)
 1. Actualizar al monstruo llamado Nahuelito para que se llame Voldemort
+#Monster.where(name:"Nahuelito").update(name:"Voldemort")
 1. Eliminar el monstruo con ID 2
+#Tweet.where(monster_id:2).destroy, Monster.find(2).destroy
 1. Obtener los últimos 5 tweets de Drácula ordenados por fecha de creación en orden descendente
+#Tweet.where(monster_id:Monster.where(name:"Dracula")).order(created_at: :desc) .limit(5)
